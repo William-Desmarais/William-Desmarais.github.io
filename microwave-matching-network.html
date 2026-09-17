@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microwave Matching Network | William Desmarais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero">
+        <div class="project-detail-hero__bg" aria-hidden="true" style="background-image: url('images/Cadence_AWR5_real_design.png');"></div>
+        <div class="project-detail-hero__overlay" aria-hidden="true"></div>
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Project Detail</p>
+          <h1 class="project-detail-title">Microwave RF Amplifier and Matching Network</h1>
+          <p class="project-detail-subtitle">Designed an impedance-matching network for an RF amplifier using S-parameters, transmission-line models, and Cadence AWR.</p>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="website portfolio.html">← Back to portfolio</a>
+
+          <h2>Design Overview</h2>
+          <p>Multiple calculation were automated in MATLab to determine the ideal stub length to allow our amplifier to be matched to a 50 ohm network at 2.8GHz</p>
+          <p>Cadence AWR was used for the design as it allows complex analyses of the S-parameters and gains of the circuit</p>
+          <img class="project-detail-image" src="images/Cadence_AWR_design.png" alt="Cadence AWR matching network design">
+          <p>Initial Cadence AWR design of the microwave matching network and its transmission-line layout.</p>
+
+          <img class="project-detail-image" src="images/Cadence_AWR_design2.png" alt="Cadence AWR design results">
+          <p>Initial layout on the subtrate with radial stubs to simulate open ends</p>
+
+          <img class="project-detail-image" src="images/Cadence_AWR6_input_impedance.png" alt="Input impedance plot from Cadence AWR">
+          <p>The input impedance was analyzed to determine how closely the network matched the target source impedance.</p>
+
+          <img class="project-detail-image" src="images/Cadence_AWR6_input_reflection.png" alt="Input reflection plot from Cadence AWR">
+          <p>Input reflection results were used to evaluate return loss and identify frequency regions requiring further optimization.</p>
+          <p>After analysis of the reflection coefficient and the input impedance small changes to stub lengths were made to improve the theorethical reflection coefficient and get the input impedance closer to 50</p>
+
+          <img class="project-detail-image" src="images/Cadence_AWR_design3_optomized.png" alt="Cadence AWR matching network schematic">
+          <p>Optimization Design using Cadence AWR</p>
+          
+          <img class="project-detail-image" src="images/Cadence_AWR_design4_optomized.png" alt="Cadence AWR matching network schematic">
+          <p>Optimized design layout including spaces for resistors and capacitors after printing.</p>
+
+          <img class="project-detail-image" src="images/Cadence_AWR5_real_design.png" alt="Cadence AWR design results">
+          <p>Final Design produced by hand soldering each component</p>
+          <h2>Real design results</h2>
+          <p>Sadly one of the soldered components fell off and the S-Parameter results were not close to the ones expected.</p>
+
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroBackground = document.querySelector('.project-detail-hero__bg');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroBackground && heroSection) {
+        const fadeDistance = 500;
+        const updateHeroFade = () => {
+          const opacity = Math.max(0, 1 - window.scrollY / fadeDistance);
+          heroBackground.style.opacity = opacity;
+        };
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>

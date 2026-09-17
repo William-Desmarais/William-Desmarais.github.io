@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CEZinc — Electrical Maintenance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero">
+        <div class="project-detail-hero__bg" aria-hidden="true" style="background-image: url('images/cezinc.jpg');"></div>
+        <div class="project-detail-hero__overlay" aria-hidden="true"></div>
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Experience</p>
+          <h1 class="project-detail-title">CEZinc — Electrical Maintenance Supervisor & Planner</h1>
+          <p class="project-detail-subtitle">Worked on maintenance planning, documentation, and coordination with engineering teams.</p>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="website portfolio.html">← Back to portfolio</a>
+
+          <h2>What I did</h2>
+          <p class="experience-date">May 2024 – August 2024</p>
+
+          <p>
+            Supported maintenance planning and project coordination, produced detailed asset reports, and worked with consultants and stakeholders for quality assurance of asset information.
+          </p>
+
+          <ul>
+            <li>Managed technical documentation and project records for maintenance</li>
+            <li>Coordinated with engineering teams and external consultants</li>
+            <li>Used spreadsheets and databases for QA of asset information</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroBackground = document.querySelector('.project-detail-hero__bg');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroBackground && heroSection) {
+        const fadeDistance = 500;
+        const updateHeroFade = () => {
+          const scrollTop = window.scrollY;
+          const opacity = Math.max(0, 1 - scrollTop / fadeDistance);
+          heroBackground.style.opacity = opacity;
+        };
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>

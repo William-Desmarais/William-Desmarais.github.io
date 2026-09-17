@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ottawa Community Housing Communication Platform | William Desmarais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero project-detail-hero--housing">
+        <img
+          class="housing-hero-image"
+          src="images/Housingchat.png"
+          alt="Ottawa Community Housing communication application"
+        >
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Project Detail</p>
+          <h1 class="project-detail-title">Ottawa Community Housing Communication Platform</h1>
+          <p class="project-detail-subtitle">
+            A targeted digital communication system designed to help landlords reach tenants in smart residential buildings.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="website portfolio.html">← Back to portfolio</a>
+
+          <h2>Project Description</h2>
+          <p>
+            Ottawa Community Housing (OCH)/ Logement Communautaire Ottawa (LCO) needed a more efficient way to communicate
+            important information to tenants. Previously, landlords had to
+            print thousands of paper notices and distribute them throughout
+            the buildings.
+          </p>
+          <p>
+            Our solution was a communication application called Housing Chat with separate
+            landlord and tenant experiences. Landlords could write a message,
+            assign a priority level, and target a specific building, floor, or
+            room. Tenants could then view relevant notices digitally instead
+            of relying on paper distribution.
+          </p>
+
+          <figure class="housing-image-card">
+            <img
+              src="images/housing_signin.png"
+              alt="Ottawa Community Housing application sign-in screen"
+            >
+            <figcaption>Tenant sign-in screen for accessing housing communications.</figcaption>
+          </figure>
+
+          <h2>Smart-building integration</h2>
+          <p>
+            Because the buildings included electronic tablets at their
+            entrances, the application could be downloaded directly onto
+            those devices so residents would see updates during their daily
+            routine. Tenants could also download the application for free on
+            an iPhone and receive the same targeted information.
+          </p>
+
+          <figure class="housing-image-card">
+            <img
+              src="images/housing3.png"
+              alt="Ottawa Community Housing communication application"
+            >
+            <figcaption>Application interface for viewing targeted community housing messages.</figcaption>
+          </figure>
+
+          <h2>Technology and platform compatibility</h2>
+          <p>
+            We coded the application using Flutter and the Dart programming
+            language. This technology choice allowed us to build a
+            cross-platform application that could be deployed to Apple iOS
+            devices and Samsung devices through the relevant app stores while
+            maintaining one shared codebase.
+          </p>
+
+          <h2>Security, confidentiality and authentification</h2>
+          <p>
+            Protecting tenant information was an important requirement of the
+            project. The application needed to keep user data confidential and
+            ensure that only authorized tenants could access the communication
+            platform.
+          </p>
+          <p>
+            During sign-up, SendGrid was used to verify the user's email
+            address. After the email was verified, the user also had to enter a
+            sign-in code provided by the administrator or landlord. This
+            additional step helped confirm that the account belonged to an
+            authorized tenant.
+          </p>
+          <p>
+            Google Firebase was used as the backend database and authentication
+            platform. It allowed user profiles, names, credentials, and other
+            application data to be managed securely and updated in real time
+            across the landlord and tenant sides of the application.
+          </p>
+
+          <div class="solar-result-callout housing-feature-callout">
+            <strong>Core communication workflow</strong>
+            <span>Write a message → choose its priority → select the building, floor, or room → deliver the notice to the intended tenants.</span>
+          </div>
+
+          <a
+            class="project-video-link-box"
+            href="https://www.youtube.com/watch?v=-XQgRiNao5w&t=1s"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Watch the project video</strong>
+            <span>See the Ottawa Community Housing communication platform in action on YouTube →</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroImage = document.querySelector('.housing-hero-image');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroImage && heroSection) {
+        const updateHeroFade = () => {
+          const opacity = Math.max(0, 1 - window.scrollY / 500);
+          heroImage.style.opacity = opacity;
+          heroSection.style.setProperty('--hero-opacity', opacity);
+        };
+
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>

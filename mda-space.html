@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MDA Space Internships | William Desmarais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero">
+        <div class="project-detail-hero__bg" aria-hidden="true" style="background-image: url('images/aurora.png');"></div>
+        <div class="project-detail-hero__overlay" aria-hidden="true"></div>
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Experience</p>
+          <h1 class="project-detail-title">MDA Space — Internships</h1>
+          <p class="project-detail-subtitle">Two internships at MDA Space — tasks ranged from EGSE and test support to systems integration.</p>
+        </div>
+      </section>
+
+      <!-- Internship 1 -->
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="website portfolio.html">← Back to portfolio</a>
+
+          <h2>Electrical Ground Support Equipment (EGSE) Engineering Student</h2>
+          <p class="experience-date">September 2025 – December 2025</p>
+
+          <p>
+            Supported EGSE engineering and test activities. Responsibilities included designing test racks for Flight Model Antenna board testing, making power calculations to ensure all components in the rack do not exceed power limits the rack's designated outlet, analyzing test data to document engineering results.
+          </p>
+
+          <figure class="experience-detail-figure">
+            <img src="images/anachoic.jpg" alt="MDA Space anechoic chamber">
+            <figcaption>Anechoic chamber used for antenna and electromagnetic compatibility testing.</figcaption>
+          </figure>
+
+          <ul>
+            <li>Performed automated multi-port S-parameter characterization and measurement of antenna systems
+using Keysight PXIe M9019A and M980xA VNA modules, programmed via CodeOne</li>
+            <li>Designed and supported EGSE test stations for EMC engineering qualification and Flight Models,
+including hardware setup and test readiness </li>
+            <li>Executed EMC testing on qualification hardware, including Radiated Susceptibility (RS), Conducted
+Susceptibility (CS), Radiated Emissions (RE), Conducted Emissions (CE), and ESD </li>
+            <li>Processed and analyzed high-volume test data using Vantage Enterprise (Verifide) to support
+engineering review and reporting</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Internship 2 -->
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <h2>Systems Engineering Student</h2>
+          <p class="experience-date">May 2026 – August 2026</p>
+
+          <p>
+            Worked with systems and integration teams supporting verification activities, integration tests, and multidisciplinary coordination. Focus areas included creating algorithms and test setups to calculate the time delay of a signal processed by the satellites, writing socket programming code to relay data in real time from a virtual machine to a device connected on an other network and test documentation redaction
+          </p>
+
+          <ul>
+            <li>Developped a python algorithm to calculate the time delay of 2 signals based on their rising edge with automatic threshold adaptation</li>
+            <li>Used Keysight N5182B Signal generator, PNA's and Ettus USRP x310 Software Defined Radio to create a test setup allowing us to capture two signals simultaneously </li>
+            <li>Used python socket programming to relay real time telemetry data from an offline device to another network connected device</li>
+            <li>Installed ClamAV anti virus solution to an offline device and created an automatic scanning and installation algorithm on linux</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroBackground = document.querySelector('.project-detail-hero__bg');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroBackground && heroSection) {
+        const fadeDistance = 500;
+        const updateHeroFade = () => {
+          const scrollTop = window.scrollY;
+          const opacity = Math.max(0, 1 - scrollTop / fadeDistance);
+          heroBackground.style.opacity = opacity;
+        };
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>
