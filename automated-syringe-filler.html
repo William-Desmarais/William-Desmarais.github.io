@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Syringe Filler | William Desmarais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero">
+        <div class="project-detail-hero__bg" aria-hidden="true" style="background-image: url('images/dog.png');"></div>
+        <div class="project-detail-hero__overlay" aria-hidden="true"></div>
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Project Detail</p>
+          <h1 class="project-detail-title">Automated Syringe Filler</h1>
+          <p class="project-detail-subtitle">
+            Designed an automated syringe filler for medical practitioners to reduce downtimes in high throughput vaccination clinics.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="index.html">← Back to portfolio</a>
+
+          <h2>Project Description</h2>
+          <img class="project-detail-image" src="images/vaccin_filler1.png" alt="Automated syringe filler prototype">
+          <p>
+            This project focused on automating the syringe filling process to support high-throughput vaccination clinics. The design reduces manual handling time, minimizes downtime between patients, and improves consistency and safety.
+          </p>
+
+          <img class="project-detail-image" src="images/vaccin_filler2.png" alt="Automated syringe filler assembly">
+          <p>
+            The system integrates precise fluid metering, automated syringe positioning, and a user interface for configuring batch sizes and volumes. Emphasis was placed on reliability, ease of sterilization, and a compact footprint for clinical environments.
+          </p>
+
+          <p class="project-detail-coming-soon">Work in progress more images coming soon</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroBackground = document.querySelector('.project-detail-hero__bg');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroBackground && heroSection) {
+        const fadeDistance = 500;
+
+        const updateHeroFade = () => {
+          const scrollTop = window.scrollY;
+          const opacity = Math.max(0, 1 - scrollTop / fadeDistance);
+          heroBackground.style.opacity = opacity;
+          heroSection.style.setProperty('--hero-opacity', opacity);
+        };
+
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>

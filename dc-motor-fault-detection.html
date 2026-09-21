@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Motor Fault Detection | William Desmarais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="project-detail-page">
+    <main>
+      <section class="project-detail-hero">
+        <div
+          class="project-detail-hero__bg"
+          aria-hidden="true"
+          style="background-image: url('images/MATLab_Simulink_motor.png');"
+        ></div>
+        <div class="project-detail-hero__overlay" aria-hidden="true"></div>
+        <div class="project-detail-hero__content">
+          <p class="project-detail-hero__eyebrow">Project Detail</p>
+          <h1 class="project-detail-title">DC Motor Fault Detection</h1>
+          <p class="project-detail-subtitle">
+            A Long Short-Term Memory (LSTM)-based system developed in MATLAB and Simulink to detect
+            motor speed-sensor failures.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-detail-section">
+        <div class="project-detail-content">
+          <a class="project-detail-back" href="index.html">← Back to portfolio</a>
+
+          <h2>Project Description</h2>
+          <img
+            class="project-detail-image"
+            src="images/MATLab_Simulink_motor.png"
+            alt="MATLAB and Simulink DC motor fault detection model"
+          >
+          <figcaption>MATLab Simulink Simulation of the motor, machine learning block, sensors and the switch .</figcaption>
+          <p> </p>
+          <p>
+
+            This project focused on developing a fault-detection system for a
+            DC motor using MATLAB and Simulink. The system uses an
+            Long Short-Term Memory neural network to identify abnormal motor
+            behavior caused by sensor failures and replace their outputs.
+          </p>
+
+          <p>
+            During the training phase, the machine-learning block received the
+            motor voltage, torque, current, and angular-speed measurements as
+            inputs in a very large number of operating conditions. The Neural Network learned
+            to identify the output of one sensor given the other three sensor measurements.
+            A sensor failure was then simulated to evaluate whether
+            the system could automatically replace the failed sensor's signal
+            with the output of the machine-learning block. This allowed the
+            motor or pump to continue operating while operators replaced the
+            sensor, helping avoid the significant costs associated with
+            stopping large industrial equipment unnecessarily.
+            However, in the event that two or more sensors failed simultaneously, the motor would be shutdown to prevent damages. 
+          </p>
+          <img
+            class="project-detail-image"
+            src="images/sensor_fault.png"
+            alt="MATLAB and Simulink sensor fault detection model results"
+          >
+          <figcaption>Stability of the motor after simulating a sensor failure at the 7 second mark .</figcaption>
+          <p> </p>
+          <p>
+            Motor data was processed and analyzed to distinguish normal
+            operating conditions from fault conditions. The model was then
+            evaluated based on its ability to detect changes in the motor
+            response and provide an early indication of a sensor problem.
+            It then replaced the faulty sensor by using it's output to continue operating until
+            a technician could replace the sensor.
+          </p>
+
+          <ul>
+            <li>Modeled DC motor behavior in MATLAB and Simulink</li>
+            <li>Generated and processed motor sensor data</li>
+            <li>Developed an LSTM-based fault-detection approach</li>
+            <li>Evaluated the model’s ability to identify speed-sensor failures</li>
+          </ul>
+          <a
+            class="project-video-link-box"
+            href="https://youtu.be/eF9jHn3SAWM?si=KVAEIQYIulO-Xz8Q"
+            target="_blank"
+            rel="noopener"
+          >
+            A full video explaining the simulation and results can be found
+            here.
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const heroBackground = document.querySelector('.project-detail-hero__bg');
+      const heroSection = document.querySelector('.project-detail-hero');
+
+      if (heroBackground && heroSection) {
+        const fadeDistance = 500;
+
+        const updateHeroFade = () => {
+          const opacity = Math.max(0, 1 - window.scrollY / fadeDistance);
+          heroBackground.style.opacity = opacity;
+          heroSection.style.setProperty('--hero-opacity', opacity);
+        };
+
+        window.addEventListener('scroll', updateHeroFade, { passive: true });
+        updateHeroFade();
+      }
+    </script>
+  </body>
+</html>
