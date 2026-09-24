@@ -34,7 +34,7 @@
             alt="Solar cell antireflective coating analysis"
           >
           <p>
-            This ELG 3106 project studied how two- and three-layer
+            This project studied how two- and three-layer
             antireflection coatings affect the power transmitted to a
             photovoltaic cell. The design variables included the number of
             layers, their refractive indices, and their thicknesses.
@@ -46,7 +46,7 @@
             may not maximize the total power produced.
           </p>
           <a class="project-report-link" href="Project ELG3106.pdf" target="_blank" rel="noopener">
-            Read the full ELG 3106 report
+            Read the full report
           </a>
           <h2>Hypotheses and simplifications</h2>
           <ul>
@@ -167,26 +167,14 @@
             Extending the range beyond the useful solar-cell response does not
             automatically increase the physically meaningful power estimate.
           </p>
-          <figure class="solar-figure">
-            <svg class="solar-reflectivity-chart" viewBox="0 0 900 360" role="img" aria-labelledby="reflectivity-title reflectivity-desc">
-              <title id="reflectivity-title">Reflectivity versus wavelength</title>
-              <desc id="reflectivity-desc">A schematic broadband reflectivity curve with a low-reflectivity region around the design wavelength.</desc>
-              <line x1="100" y1="40" x2="100" y2="285" class="solar-chart-axis"></line>
-              <line x1="100" y1="285" x2="850" y2="285" class="solar-chart-axis"></line>
-              <line x1="100" y1="100" x2="850" y2="100" class="solar-chart-gridline"></line>
-              <line x1="100" y1="190" x2="850" y2="190" class="solar-chart-gridline"></line>
-              <text x="70" y="48" class="solar-chart-label">R</text>
-              <text x="65" y="105" class="solar-chart-label">high</text>
-              <text x="65" y="195" class="solar-chart-label">low</text>
-              <text x="475" y="330" text-anchor="middle" class="solar-chart-label">Wavelength, λ (nm)</text>
-              <text x="38" y="175" transform="rotate(-90 38 175)" text-anchor="middle" class="solar-chart-label">Reflectivity</text>
-              <path d="M100 112 C175 120, 215 138, 275 150 S355 225, 430 235 S500 214, 555 168 S635 92, 700 118 S790 152, 850 125" class="solar-reflectivity-line"></path>
-              <line x1="470" y1="55" x2="470" y2="285" class="solar-center-line"></line>
-              <text x="480" y="72" class="solar-chart-label">λ₀</text>
-              <text x="100" y="304" class="solar-chart-label">400</text>
-              <text x="810" y="304" class="solar-chart-label">1400</text>
-            </svg>
-            <figcaption>Figure 2. Schematic reflectivity response across the solar spectrum. The coating is optimized for broadband performance rather than only one wavelength.</figcaption>
+          <figure class="experience-detail-figure">
+            <img src="images/solarreflection.png" alt="solar reflection transmission">
+            <figcaption>Optomizing reflectivity accross broad range rather than center frequency</figcaption>
+          </figure>
+          <p> I was then able to compute the power for each case </p>
+          <figure class="experience-detail-figure">
+            <img src="images/solarpower.png" alt="solar power transmission">
+            <figcaption>Optomizing reflectivity accross broad rangeleads to higher overall power </figcaption>
           </figure>
         </div>
       </section>
@@ -202,7 +190,7 @@
           </p>
           <div class="solar-result-callout">
             <strong>Engineering outcome</strong>
-            <span>A Transfer Matrix Method and MATLAB workflow for comparing multilayer photovoltaic coatings.</span>
+            <span>A Transfer Matrix Method and MATLAB workflow for comparing multilayer solarcell coatings.</span>
           </div>
         </div>
       </section>
